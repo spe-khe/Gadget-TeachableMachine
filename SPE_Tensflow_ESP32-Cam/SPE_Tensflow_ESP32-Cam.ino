@@ -1,26 +1,32 @@
 /*
+Made by
 Author : ChungYi Fu (Kaohsiung, Taiwan)  2021-7-3 22:00
 https://www.facebook.com/francefu
-http://192.168.xxx.xxx             //網頁首頁管理介面
-http://192.168.xxx.xxx:81/stream   //取得串流影像       <img src="http://192.168.xxx.xxx:81/stream">
-http://192.168.xxx.xxx/capture     //取得影像          <img src="http://192.168.xxx.xxx/capture">
-http://192.168.xxx.xxx/status      //取得視訊參數值
-自訂指令格式 :  
+
+
+http://192.168.xxx.xxx             //Verwaltungsschnittstelle für Webseiten
+http://192.168.xxx.xxx:81/stream   //Streaming-Video erhalten  <img src="http://192.168.xxx.xxx:81/stream">
+http://192.168.xxx.xxx/capture     //Bild erhalten             <img src="http://192.168.xxx.xxx/capture">
+http://192.168.xxx.xxx/status      //Videoparameterwert abrufen
+Standard-AP IP： 192.168.4.1
+Benutzerdefiniertes Befehlsformat:  
 http://APIP/control?cmd=P1;P2;P3;P4;P5;P6;P7;P8;P9
 http://STAIP/control?cmd=P1;P2;P3;P4;P5;P6;P7;P8;P9
-預設AP端IP： 192.168.4.1
-自訂指令格式 http://192.168.xxx.xxx/control?cmd=P1;P2;P3;P4;P5;P6;P7;P8;P9
-http://192.168.xxx.xxx/control?ip                      //取得APIP, STAIP
-http://192.168.xxx.xxx/control?mac                     //取得MAC位址
-http://192.168.xxx.xxx/control?restart                 //重啟ESP32-CAM
-http://192.168.xxx.xxx/control?digitalwrite=pin;value  //數位輸出
-http://192.168.xxx.xxx/control?analogwrite=pin;value   //類比輸出
-http://192.168.xxx.xxx/control?digitalread=pin         //數位讀取
-http://192.168.xxx.xxx/control?analogread=pin          //類比讀取
+http://192.168.xxx.xxx/control?cmd=P1;P2;P3;P4;P5;P6;P7;P8;P9
+
+http://192.168.xxx.xxx/control?ip                      //Enthällt APIP, STAIP
+http://192.168.xxx.xxx/control?mac                     //MAC-Adresse abrufen
+http://192.168.xxx.xxx/control?restart                 //ESP32-CAM neu starten
+http://192.168.xxx.xxx/control?digitalwrite=pin;value  //Digitalausgang
+http://192.168.xxx.xxx/control?analogwrite=pin;value   //Analogausgang
+http://192.168.xxx.xxx/control?digitalread=pin         //Digitalen Pin auslesen
+http://192.168.xxx.xxx/control?analogread=pin          //Analogen Pin auslesen
 http://192.168.xxx.xxx/control?touchread=pin           //觸碰讀取
-http://192.168.xxx.xxx/control?resetwifi=ssid;password   //重設Wi-Fi網路
-http://192.168.xxx.xxx/control?flash=value             //內建閃光燈 value= 0~255
-官方指令格式 http://192.168.xxx.xxx/control?var=***&val=***
+http://192.168.xxx.xxx/control?resetwifi=ssid;password //Wi-Fi-Netzwerk zurücksetzen
+http://192.168.xxx.xxx/control?flash=value             //Eingebautes LED-Helligkeit Wert= 0~255
+Offizielles Format der Anweisung
+http://192.168.xxx.xxx/control?var=***&val=***
+
 http://192.168.xxx.xxx/control?var=framesize&val=value    // value = 10->UXGA(1600x1200), 9->SXGA(1280x1024), 8->XGA(1024x768) ,7->SVGA(800x600), 6->VGA(640x480), 5 selected=selected->CIF(400x296), 4->QVGA(320x240), 3->HQVGA(240x176), 0->QQVGA(160x120)
 http://192.168.xxx.xxx/control?var=quality&val=value      // value = 10 ~ 63
 http://192.168.xxx.xxx/control?var=brightness&val=value   // value = -2 ~ 2
@@ -29,9 +35,9 @@ http://192.168.xxx.xxx/control?var=hmirror&val=value      // value = 0 or 1
 http://192.168.xxx.xxx/control?var=vflip&val=value        // value = 0 or 1 
 http://192.168.xxx.xxx/control?var=flash&val=value        // value = 0 ~ 255   
       
-查詢Client端IP：
-查詢IP：http://192.168.4.1/?ip
-重設網路：http://192.168.4.1/?resetwifi=ssid;password
+Client-IP abfragen：
+IP abfragen：http://192.168.4.1/?ip
+Netzwerk zurücksetzen：http://192.168.4.1/?resetwifi=ssid;password
 */
 
 //輸入WIFI連線帳號密碼
