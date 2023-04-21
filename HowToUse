@@ -5,3 +5,5 @@ Benötigt:
 [] Diese Anleitung
 
 
+Addtional Board Manager: https://dl.espressif.com/dl/package_esp32_index.json (in den Einstellugen hinzufügen)
+ESP-32 Bibiothek herunterladen
